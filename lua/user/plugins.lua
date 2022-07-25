@@ -41,7 +41,6 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
 
 	use "wbthomason/packer.nvim"                                    -- Have packer manage itself
 	use "nvim-lua/plenary.nvim"                                     -- Useful lua functions used by lots of plugins
@@ -59,18 +58,26 @@ return packer.startup(function(use)
 	use "lukas-reineke/indent-blankline.nvim"
 	use "goolord/alpha-nvim"
 	use "folke/which-key.nvim"
+  use "wakatime/vim-wakatime"
+  use "ggandor/lightspeed.nvim"
+
+  -- Surround
+  use "kylechui/nvim-surround"
+
+  use({'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'})
+  use({'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'})
 
 	-- Colorschemes
 	use "folke/tokyonight.nvim"
 	use "lunarvim/darkplus.nvim"
 
 	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" }) -- buffer completions
-	use({ "hrsh7th/cmp-path", commit = "466b6b8270f7ba89abd59f402c73f63c7331ff6e" }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
-	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
+	use "hrsh7th/nvim-cmp"             -- The completion plugin
+	use "hrsh7th/cmp-buffer"           -- buffer completions
+	use "hrsh7th/cmp-path"             -- path completions
+	use "saadparwaiz1/cmp_luasnip"     -- snippet completions
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-nvim-lua"
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
@@ -85,10 +92,7 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		commit = "518e27589c0463af15463c9d675c65e464efc2fe",
-	})
+	use "nvim-treesitter/nvim-treesitter"
 
 	-- Git
 	use "lewis6991/gitsigns.nvim"
