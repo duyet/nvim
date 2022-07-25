@@ -1,5 +1,7 @@
 # duyet's NeoVim Configuration
 
+![](.github/screenshot/screenshot.png)
+
 ### Usage
 
 Make sure to backup your current `nvim` configuration by `mv ~/.config/nvim ~/.config/nvim.backup`.
