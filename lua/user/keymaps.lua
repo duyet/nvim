@@ -44,7 +44,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- NvimTree
-keymap("n", "e", ":NvimTreeFocus<CR>", opts)     -- Press "e" to focus to NVimTree
+keymap("n", "e", ":NvimTreeFocus<CR>", opts)     -- Press "e" to focus to NVimTree, press "e" again to toggle
 
 -- Clear highlight search
 keymap('n', '<ESC>', ':nohl<CR>', opts)
@@ -52,8 +52,11 @@ keymap('n', '<ESC>', ':nohl<CR>', opts)
 -- Search Text, <Space>st
 keymap('n', "<leader>st", ":lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({}))<cr>", opts)
 
+-- Format code
+keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()", opts)
+
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
@@ -75,6 +78,9 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Format code
+keymap("x", "<leader>fm", ":lua vim.lsp.buf.range_formatting()", opts)
 
 -- Terminal --
 -- Better terminal navigation
