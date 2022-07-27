@@ -11,6 +11,7 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  open_on_tab = true,
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -54,6 +55,9 @@ nvim_tree.setup {
     },
   },
   view = {
+    adaptive_size = true,
+    number = true,
+    relativenumber = true,
     width = 30,
     height = 30,
     side = "left",
@@ -62,7 +66,13 @@ nvim_tree.setup {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "u", cb = tree_cb "dir_up" },
+        { key = "e", cb = tree_cb "toggle" },
+        { key = "i", cb = tree_cb "show_info_popup" },
       },
     },
+  },
+  filters = {
+    dotfiles = true,
   },
 }
