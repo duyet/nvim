@@ -36,21 +36,36 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<Tab>", ":bNext<CR>", opts)           -- <Tab> to go to next buffers
-keymap("n", "<S-Tab>", ":bprevious<CR>", opts)     -- <Shift><Tab> to go to prev buffers
+keymap("n", "<Tab>", ":bNext<CR>", opts) -- <Tab> to go to next buffers
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts) -- <Shift><Tab> to go to prev buffers
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Jump to far left or right of line
+keymap("n", "H", "^", opts)
+keymap("n", "L", "$", opts)
+
+-- Navigate splits
+keymap("n", "<A-Up>", "<C-k>", opts)
+keymap("n", "<A-Down>", "<C-j>", opts)
+keymap("n", "<A-Left>", "<C-h>", opts)
+keymap("n", "<A-Right>", "<C-l>", opts)
+
 -- NvimTree
-keymap("n", "e", ":NvimTreeFocus<CR>", opts)     -- Press "e" to focus to NVimTree, press "e" again to toggle
+keymap("n", "e", ":NvimTreeFocus<CR>", opts) -- Press "e" to focus to NVimTree, press "e" again to toggle
 
 -- Clear highlight search
-keymap('n', '<ESC>', ':nohl<CR>', opts)
+keymap("n", "<ESC>", ":nohl<CR>", opts)
 
 -- Search Text, <Space>st
-keymap('n', "<leader>st", ":lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({}))<cr>", opts)
+keymap(
+	"n",
+	"<leader>st",
+	":lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({}))<cr>",
+	opts
+)
 
 -- Format code
 keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()", opts)
@@ -88,4 +103,3 @@ keymap("x", "<leader>fm", ":lua vim.lsp.buf.range_formatting()", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

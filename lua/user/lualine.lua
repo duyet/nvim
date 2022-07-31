@@ -21,7 +21,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -29,6 +29,27 @@ local mode = {
 	fmt = function(str)
 		return "-- " .. str .. " --"
 	end,
+}
+
+local filename = {
+	"filename",
+	file_status = true,
+
+	-- 0: Just the filename
+	-- 1: Relative path
+	-- 2: Absolute path
+	-- 3: Absolute path, with tilde as the home directory
+	path = 3,
+
+	-- Shortens path to leave 40 spaces in the window
+	-- for other components.
+	shorting_target = 40,
+
+	symbols = {
+		modified = "[+]", -- Text to show when the file is modified.
+		readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
+		unnamed = "[No Name]", -- Text to show for unnamed buffers.
+	},
 }
 
 local filetype = {
@@ -74,7 +95,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
+		lualine_c = { filename },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
@@ -90,4 +111,5 @@ lualine.setup({
 	},
 	tabline = {},
 	extensions = {},
+
 })

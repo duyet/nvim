@@ -8,15 +8,15 @@ end
 
 local capabilities = require("user.lsp.handlers").capabilities
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = false
+  dynamicRegistration = false,
+  lineFoldingOnly = false
 }
 
-local language_servers = {'rust_analyzer'} -- like {'gopls', 'clangd'}
+local language_servers = { 'rust_analyzer' } -- like {'gopls', 'clangd'}
 for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({
-        capabilities = capabilities,
-    })
+  require('lspconfig')[ls].setup({
+    capabilities = capabilities,
+  })
 end
 
 

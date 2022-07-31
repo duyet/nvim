@@ -12,6 +12,10 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   open_on_tab = true,
+  filters = {
+    dotfiles = false,
+    -- custom = { "^\\.git" },
+  },
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -71,8 +75,5 @@ nvim_tree.setup {
         { key = "i", cb = tree_cb "show_info_popup" },
       },
     },
-  },
-  filters = {
-    dotfiles = true,
   },
 }
