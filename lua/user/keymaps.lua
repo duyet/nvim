@@ -68,7 +68,8 @@ keymap(
 )
 
 -- Format code
-keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()", opts)
+-- keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()", opts)
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
 -- Insert --
 -- Press jk fast to exit insert mode
