@@ -114,6 +114,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "treesitter" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -124,8 +125,10 @@ cmp.setup({
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
 	},
+  view = {
+    entries = "native",
+  },
 	experimental = {
 		ghost_text = false,
-		native_menu = false,
 	},
 })

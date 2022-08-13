@@ -9,19 +9,46 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 local completion = null_ls.builtins.completion
+local hover = null_ls.builtins.hover
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.rustfmt,
+		-- formatting.rustfmt.with({
+		-- 	extra_args = function(params)
+		-- 		local Path = require("plenary.path")
+		-- 		local cargo_toml = Path:new(params.root .. "/" .. "Cargo.toml")
+		-- 		if cargo_toml:exists() and cargo_toml:is_file() then
+		-- 			for _, line in ipairs(cargo_toml:readlines()) do
+		-- 				local edition = line:match([[^edition%s*=%s*%"(%d+)%"]])
+		-- 				if edition then
+		-- 					return { "--edition=" .. edition }
+		-- 				end
+		-- 			end
+		-- 		end
+		-- 		-- default edition when we don't find `Cargo.toml` or the `edition` in it.
+		-- 		return { "--edition=2021" }
+		-- 	end,
+		-- }),
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+    -- formatting.buf,
+    -- formatting.markdownlint,
+    -- formatting.pg_format,
 
-		diagnostics.flake8,
 		diagnostics.eslint,
 		diagnostics.pylint,
+    diagnostics.actionlint, -- Github Workflows
+    -- diagnostics.alex, -- Markdown, Catch insensitive, inconsiderate writing
+    -- diagnostics.buf, -- Protobuf
 
-		completion.spell,
+		-- completion.spell,
+
+    -- Code actions
+    -- code_actions.gitsigns,
+
+		-- hover.dictionary,
 	},
 })
