@@ -49,7 +49,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("akinsho/bufferline.nvim")
+	use({ "akinsho/bufferline.nvim", commit = "b1a63fea34e630f73e84dff21d3c4b0097f6afd4" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
@@ -62,7 +62,7 @@ return packer.startup(function(use)
 	use("ggandor/lightspeed.nvim")
 
 	-- Copilot
-	use("github/copilot.vim")
+	--[[ use("github/copilot.vim") ]]
 
 	-- Surround
 	use("kylechui/nvim-surround")
@@ -71,8 +71,9 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Colorschemes
-	use("folke/tokyonight.nvim")
-	use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" })
+	--[[ use("folke/tokyonight.nvim") ]]
+	use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+	--[[ use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" }) ]]
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -95,7 +96,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/lsp-format.nvim")
 
 	-- Rust
-	-- use("simrat39/rust-tools.nvim")
+	use("simrat39/rust-tools.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- Treesitter
@@ -110,6 +111,17 @@ return packer.startup(function(use)
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	use({
+		"gen740/SmoothCursor.nvim",
+		config = function()
+			require("smoothcursor").setup({
+				fancy = {
+					enable = true,
+				},
+			})
 		end,
 	})
 
