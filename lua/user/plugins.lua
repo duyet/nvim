@@ -62,7 +62,7 @@ return packer.startup(function(use)
 	use("ggandor/lightspeed.nvim")
 
 	-- Copilot
-	--[[ use("github/copilot.vim") ]]
+	use("github/copilot.vim")
 
 	-- Surround
 	use("kylechui/nvim-surround")
