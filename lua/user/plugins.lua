@@ -71,9 +71,18 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Colorschemes
+	-- Please set Colorschemes in colorscheme.lua
 	--[[ use("folke/tokyonight.nvim") ]]
 	use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+	use("rebelot/kanagawa.nvim")
 	--[[ use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" }) ]]
+	use({
+		"mvllow/modes.nvim",
+		tag = "v0.2.0",
+		config = function()
+			require("modes").setup()
+		end,
+	})
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -96,7 +105,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/lsp-format.nvim")
 
 	-- Rust
-	use("simrat39/rust-tools.nvim")
+	--[[ use("simrat39/rust-tools.nvim") ]]
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- Treesitter

@@ -15,7 +15,7 @@ bufferline.setup({
 		-- as an escape hatch for people who cannot bear it for whatever reason
 		indicator_icon = "▎",
 		-- buffer_close_icon = "",
-		buffer_close_icon = '',
+		buffer_close_icon = "",
 		modified_icon = "●",
 		close_icon = "",
 		-- close_icon = '',
@@ -73,19 +73,19 @@ bufferline.setup({
 	},
 	highlights = {
 		fill = {
-			guifg = { attribute = "fg", highlight = "#ff0000" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
+			guifg = { attribute = "fg", highlight = "#FF0000" },
+			guibg = { attribute = "bg", highlight = "#ff0000" },
 		},
 		background = {
 			guifg = { attribute = "fg", highlight = "TabLine" },
 			guibg = { attribute = "bg", highlight = "TabLine" },
 		},
 
-		-- buffer_selected = {
-		--   guifg = {attribute='fg',highlight='#ff0000'},
-		--   guibg = {attribute='bg',highlight='#0000ff'},
-		--   gui = 'none'
-		--   },
+		buffer_selected = {
+			guifg = { attribute = "fg", highlight = "#ff0000" },
+			guibg = { attribute = "bg", highlight = "#ff0000" },
+			gui = "none",
+		},
 		buffer_visible = {
 			guifg = { attribute = "fg", highlight = "TabLine" },
 			guibg = { attribute = "bg", highlight = "TabLine" },
@@ -155,10 +155,10 @@ bufferline.setup({
 			guifg = { attribute = "bg", highlight = "Normal" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
-		-- separator_visible = {
-		--   guifg = {attribute='bg',highlight='TabLine'},
-		--   guibg = {attribute='bg',highlight='TabLine'}
-		--   },
+		separator_visible = {
+			guifg = { attribute = "bg", highlight = "TabLine" },
+			guibg = { attribute = "bg", highlight = "TabLine" },
+		},
 		indicator_selected = {
 			guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
 			guibg = { attribute = "bg", highlight = "Normal" },

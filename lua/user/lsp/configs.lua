@@ -13,7 +13,7 @@ end
 local lspconfig = require("lspconfig")
 
 -- https://github.com/williamboman/mason-lspconfig.nvim
-local servers = { "jsonls", "pylsp", "bashls", "yamlls", "tsserver", "eslint", "taplo", "rust_analyzer" }
+local servers = { "jsonls", "pylsp", "bashls", "yamlls", "tsserver", "eslint", "taplo", "rust_analyzer", "terraformls" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
