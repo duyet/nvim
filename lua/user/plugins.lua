@@ -74,7 +74,7 @@ return packer.startup(function(use)
 	-- Please set Colorschemes in colorscheme.lua
 	--[[ use("folke/tokyonight.nvim") ]]
 	use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
-	use("rebelot/kanagawa.nvim")
+	use({"rebelot/kanagawa.nvim", commit = "5f1203f4606e3208f6dd156c03f498d9fadcf1a8"})
 	--[[ use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" }) ]]
 	use({
 		"mvllow/modes.nvim",
