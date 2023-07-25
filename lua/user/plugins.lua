@@ -47,8 +47,8 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+	use("nvim-tree/nvim-web-devicons")
+	use("nvim-tree/nvim-tree.lua")
 	use({ "akinsho/bufferline.nvim", commit = "b1a63fea34e630f73e84dff21d3c4b0097f6afd4" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
@@ -109,7 +109,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", commit = "e9ab0341394b41ac9fbd197b0a6ceaff3c4d9e51" })
+	use("nvim-treesitter/nvim-treesitter")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

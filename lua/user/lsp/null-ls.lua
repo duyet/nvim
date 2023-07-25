@@ -1,5 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
+  vim.notify("null-ls is not found")
 	return
 end
 
@@ -13,7 +14,7 @@ local hover = null_ls.builtins.hover
 local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		-- formatting.rustfmt.with({
 		-- 	extra_args = function(params)
@@ -32,10 +33,18 @@ null_ls.setup({
 		-- 	end,
 		-- }),
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+
+    -- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
+
+    -- Lua
 		formatting.stylua,
+
+    -- Markdown
     -- formatting.buf,
     -- formatting.markdownlint,
+
+    -- PG
     -- formatting.pg_format,
 
 		diagnostics.eslint,
