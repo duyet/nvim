@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-tree/nvim-web-devicons")
-	use("nvim-tree/nvim-tree.lua")
+	use({ "nvim-tree/nvim-tree.lua", commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01" })
 	use({ "akinsho/bufferline.nvim", commit = "b1a63fea34e630f73e84dff21d3c4b0097f6afd4" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
@@ -108,8 +108,8 @@ return packer.startup(function(use)
 	--[[ use("simrat39/rust-tools.nvim") ]]
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim") -- Treesitter
-	use("nvim-treesitter/nvim-treesitter")
+	use({ "nvim-telescope/telescope.nvim", tag="0.1.0" })
+	use({ "nvim-treesitter/nvim-treesitter", tag="v0.9.1" })
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
