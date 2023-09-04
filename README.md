@@ -1,5 +1,7 @@
 # duyet's NeoVim Configuration
 
+This is my personal configuration for NeoVim, including custom key bindings and plugins. It is designed to improve my productivity and workflow when working with code. Feel free to use it as a starting point for your own NeoVim configuration!
+
 ![](.github/screenshot/screenshot_1.png)
 ![](.github/screenshot/screenshot_2.png)
 ![](.github/screenshot/screenshot_3.png)
