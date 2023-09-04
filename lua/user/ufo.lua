@@ -19,5 +19,4 @@ for _, ls in ipairs(language_servers) do
   })
 end
 
-
 ufo.setup()
