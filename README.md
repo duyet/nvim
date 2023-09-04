@@ -1,6 +1,10 @@
 # duyet's NeoVim Configuration
 
-![](.github/screenshot/screenshot.png)
+![](.github/screenshot/screenshot_1.png)
+![](.github/screenshot/screenshot_2.png)
+![](.github/screenshot/screenshot_3.png)
+![](.github/screenshot/screenshot_4.png)
+![](.github/screenshot/screenshot_5.png)
 
 ### Usage
 
