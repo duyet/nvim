@@ -12,8 +12,8 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
-	update_in_insert = false,
+	colored = true,
+	update_in_insert = true,
 	always_visible = true,
 }
 
@@ -86,7 +86,8 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		-- theme = "auto",
+    theme = "papercolor_light",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
@@ -111,5 +112,4 @@ lualine.setup({
 	},
 	tabline = {},
 	extensions = {},
-
 })

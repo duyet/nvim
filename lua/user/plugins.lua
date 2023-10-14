@@ -49,7 +49,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-tree/nvim-web-devicons")
 	use({ "nvim-tree/nvim-tree.lua", commit = "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01" })
-	use({ "akinsho/bufferline.nvim", commit = "b1a63fea34e630f73e84dff21d3c4b0097f6afd4" })
+	use({ "akinsho/bufferline.nvim", commit = "b1a63fea34e630f73e84dff21d3c4b0097f6afd4", requires = "nvim-tree/nvim-web-devicons" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
@@ -68,17 +68,17 @@ return packer.startup(function(use)
 	use("kylechui/nvim-surround")
 
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- Colorschemes
 	-- Please set Colorschemes in colorscheme.lua
-	--[[ use("folke/tokyonight.nvim") ]]
-	use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
-	use({"rebelot/kanagawa.nvim", commit = "5f1203f4606e3208f6dd156c03f498d9fadcf1a8"})
+	use({ "folke/tokyonight.nvim" })
+	-- use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+	-- use({"rebelot/kanagawa.nvim", commit = "5f1203f4606e3208f6dd156c03f498d9fadcf1a8"})
 	--[[ use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" }) ]]
 	use({
 		"mvllow/modes.nvim",
-		tag = "v0.2.0",
+		tag = "v0.2.1",
 		config = function()
 			require("modes").setup()
 		end,
@@ -108,7 +108,7 @@ return packer.startup(function(use)
 	--[[ use("simrat39/rust-tools.nvim") ]]
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", tag="0.1.0" })
+	use({ "nvim-telescope/telescope.nvim", tag="0.1.3" })
 	use({ "nvim-treesitter/nvim-treesitter", tag="v0.9.1" })
 
 	-- Git

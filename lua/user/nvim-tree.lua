@@ -10,7 +10,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {
+nvim_tree.setup({
   open_on_tab = true,
   filters = {
     dotfiles = false,
@@ -64,7 +64,7 @@ nvim_tree.setup {
   },
   view = {
     adaptive_size = true,
-    number = true,
+    number = false,
     relativenumber = true,
     side = "left",
     mappings = {
@@ -78,4 +78,4 @@ nvim_tree.setup {
       },
     },
   },
-}
+})
