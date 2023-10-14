@@ -3,20 +3,7 @@ if not status_ok then
 	return
 end
 
-vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
-vim.g.indent_blankline_filetype_exclude = {
-	"help",
-	"startify",
-	"dashboard",
-	"packer",
-	"neogitstatus",
-	"NvimTree",
-	"Trouble",
-}
 vim.g.indentLine_enabled = 1
--- vim.g.indent_blankline_char = "│"
-vim.g.indent_blankline_char = "▏"
--- vim.g.indent_blankline_char = "▎"
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = true
 vim.g.indent_blankline_use_treesitter = true
@@ -58,4 +45,30 @@ vim.opt.list = true
 -- vim.opt.listchars:append "space:"
 vim.opt.listchars:append "eol:↴"
 
-require("ibl").setup()
+require("ibl").setup({
+  indent = {
+    char = "▏",
+  },
+  scope = {
+    enabled = true,
+  },
+  exclude = {
+    filetypes = {
+      "lspinfo",
+      "help",
+      "man",
+      "gitcommit",
+      "startify",
+      "dashboard",
+      "neogitstatus",
+      "NvimTree",
+      "packer",
+      "checkhealth",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "Trouble",
+      "",
+    },
+    buftypes = { "terminal", "nofile", "quickfix", "prompt" },
+  }
+})
